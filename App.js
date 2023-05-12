@@ -1,12 +1,38 @@
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { useEffect, useState } from 'react';
+
+import ShopNavigator from './src/navigation/ShopNavigator';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
 
 export default function App() {
+  const [isPortrait, setIsPortrait] = useState(true)
+
+  const statePortrait = () => setIsPortrait(onPortrait)
+
+  const onPortrait = () => {
+    const dim = Dimensions.get("screen")
+    return dim.height > dim.width
+  }
+
+  console.log(isPortrait);
+
+  useEffect(() => {
+    Dimensions.addEventListener('change', statePortrait)
+    return () => {
+      Dimensions.removeEventListener('change', statePortrait)
+    }
+  }, [])
+
+  const [loaded] = useFonts({
+    OpenSansBold: require('./src/assets/fonts/OpenSans-Bold.ttf'),
+    OpenSansRegular: require('./src/assets/fonts/OpenSans-Regular.ttf'),
+  });
+
+  if (!loaded) return null
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <ShopNavigator />
   );
 }
 
@@ -17,4 +43,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  texto: {
+    fontFamily: "OpenSansBold"
+  },
+  texto2: {
+    fontFamily: "OpenSansRegular"
+  }
 });
