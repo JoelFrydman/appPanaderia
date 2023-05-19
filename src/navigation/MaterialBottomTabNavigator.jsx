@@ -1,46 +1,44 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import CartNavigator from "./CartNavigator";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ShopNavigator from "./ShopNavigator";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
-const BottomTabs = createBottomTabNavigator();
+const MaterialBottomTabs = createMaterialBottomTabNavigator();
 
-export default BottomTabNavigator = () => {
+export default MaterialBottomTabNavigator = () => {
   return (
-    <BottomTabs.Navigator
+    <MaterialBottomTabs.Navigator
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: styles.tabBar,
       }}
     >
-      <BottomTabs.Screen
-        name="ShopNavigator"
+      <MaterialBottomTabs.Screen
+        name="Shop"
         component={ShopNavigator}
         options={{
           tabBarIcon: () => (
             <View>
               <Ionicons name="home" size={30} color="black" />
-              <Text>Shop</Text>
             </View>
           ),
         }}
       />
-      <BottomTabs.Screen
+      <MaterialBottomTabs.Screen
         name="Cart"
         component={CartNavigator}
         options={{
           tabBarIcon: () => (
             <View>
               <Ionicons name="cart" size={30} color="black" />
-              <Text>Cart</Text>
             </View>
           ),
         }}
       />
-    </BottomTabs.Navigator>
+    </MaterialBottomTabs.Navigator>
   );
 };
 

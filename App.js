@@ -1,10 +1,10 @@
-import BottomTabNavigator from "./src/navigation/BottomTabNavigator";
+import MaterialBottomTabNavigator from "./src/navigation/MaterialBottomTabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <BottomTabNavigator />
+      <MaterialBottomTabNavigator />
     </NavigationContainer>
   );
 }

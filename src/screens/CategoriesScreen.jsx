@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   categoriesContainer: {
+    margin:5,
     padding: 15,
     height: 150,
   },
