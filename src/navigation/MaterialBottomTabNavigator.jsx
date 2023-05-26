@@ -1,7 +1,8 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import CartNavigator from "./CartNavigator";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import OrdersNavigator from "./OrdersNavigator";
 import ShopNavigator from "./ShopNavigator";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
@@ -28,12 +29,12 @@ export default MaterialBottomTabNavigator = () => {
         }}
       />
       <MaterialBottomTabs.Screen
-        name="Cart"
-        component={CartNavigator}
+        name="Orders"
+        component={OrdersNavigator}
         options={{
           tabBarIcon: () => (
             <View>
-              <Ionicons name="cart" size={30} color="black" />
+              <Ionicons name="list" size={30} color="black" />
             </View>
           ),
         }}
