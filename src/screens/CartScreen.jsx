@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
     backgroundColor: "#fff",
-    //paddingBottom: 120
   },
   list: {
     flex: 3,

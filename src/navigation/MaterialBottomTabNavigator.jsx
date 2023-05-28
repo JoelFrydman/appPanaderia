@@ -29,7 +29,18 @@ export default MaterialBottomTabNavigator = () => {
         }}
       />
       <MaterialBottomTabs.Screen
-        name="Orders"
+        name="Cart"
+        component={CartNavigator}
+        options={{
+          tabBarIcon: () => (
+            <View>
+              <Ionicons name="cart" size={30} color="black" />
+            </View>
+          ),
+        }}
+      />
+      <MaterialBottomTabs.Screen
+        name="OrdersTab"
         component={OrdersNavigator}
         options={{
           tabBarIcon: () => (
