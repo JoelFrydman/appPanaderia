@@ -18,7 +18,7 @@ export default MaterialBottomTabNavigator = () => {
       }}
     >
       <MaterialBottomTabs.Screen
-        name="Shop"
+        name="Inicio"
         component={ShopNavigator}
         options={{
           tabBarIcon: () => (
@@ -29,7 +29,7 @@ export default MaterialBottomTabNavigator = () => {
         }}
       />
       <MaterialBottomTabs.Screen
-        name="Cart"
+        name="Carrito"
         component={CartNavigator}
         options={{
           tabBarIcon: () => (
@@ -40,7 +40,7 @@ export default MaterialBottomTabNavigator = () => {
         }}
       />
       <MaterialBottomTabs.Screen
-        name="OrdersTab"
+        name="Ordenes"
         component={OrdersNavigator}
         options={{
           tabBarIcon: () => (
